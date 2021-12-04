@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atrinh1996/StockTicker.git"
+    "url": "git+https://github.com/kristin-ng/cs20-hw14"
   },
   "keywords": [
     "stock",
     "finance",
     "comp20"
   ],
-  "author": "Amy B",
+  "author": "Kristin Ng",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/atrinh1996/StockTicker/issues"
+    "url": "https://github.com/kristin-ng/cs20-hw14/issues"
   },
-  "homepage": "https://github.com/atrinh1996/StockTicker#readme",
+  "homepage": "https://github.com/kristin-ng/cs20-hw14",
   "dependencies": {
     "csv-parser": "^3.0.0",
     "mongodb": "^3.6.6",

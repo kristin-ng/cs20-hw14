@@ -1,12 +1,7 @@
-/*
- * StockTickerExecute.js
- * (Part 2.3)
+/* app.js
+ * Purpose: Display's user's requested information.
  *
- * Display's user's requested information.
- *
- * Author: Amy Bui
- * Comp20
- * Spring 2021
+ * Kristin Ng
  */
 
 var http = require("http");
@@ -18,7 +13,7 @@ const MongoClient = require("mongodb").MongoClient;
 
 // connection string
 const mongoUrl =
-  "mongodb+srv://amybui:dbUser2014@cluster0.u3iji.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://kristin-ng:y8791935K@cluster0.sgmfn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const server = http.createServer((req, res) => {
   // create filepath for any page
@@ -27,20 +22,16 @@ const server = http.createServer((req, res) => {
     "public",
     req.url === "/" ? "index.html" : req.url
   );
-  // console.log(filePath);
 
   // Ensure correct content type is picked
   var contentType = getContType(filePath);
-  // console.log(contentType);
 
   if (req.url == "/result") {
     res.writeHead(200, { "Content-Type": "text/html" });
-    // res.write ("Process the POST request<br>");
     pdata = "";
     req
       .on("data", (data) => {
         pdata += data.toString();
-        // res.write(pdata);
       })
       .on("end", () => {
         pdata = qs.parse(pdata);
@@ -66,10 +57,7 @@ const server = http.createServer((req, res) => {
 const port = process.env.PORT || 8080;
 server.listen(port, () => console.log(`Server running on port ${port}`));
 
-/* getContType
- * Returns the string for Content-Type given a files path.
- * Limited to the cases shown below. Default will be html.
- */
+// Returns the string for Content-Type given a files path.
 function getContType(filePath) {
   var ext = path.extname(filePath);
   switch (ext) {
@@ -84,9 +72,7 @@ function getContType(filePath) {
   }
 }
 
-/* display404Page
- * displays error page when user attempts to view non page on server
- */
+// displays error page when user attempts to view non page on server
 function display404Page(err, res) {
   if (err.code == "ENOENT") {
     // Display 404 page
@@ -97,17 +83,13 @@ function display404Page(err, res) {
   }
 }
 
-/* displayCurrentContent
- * Takes the response from server and displays content.
- */
+// Takes the response from server and displays content.
 function displayCurrentContent(content, contentType, res) {
   res.writeHead(200, { "Content-Type": contentType });
   res.end(content, "utf8");
 }
 
-/* connectAndDisplay
- * Query the database and display information requested
- */
+// Query the database and display information requested
 async function connectAndDisplay(target, type, res) {
   var t = "";
 
@@ -144,7 +126,6 @@ async function connectAndDisplay(target, type, res) {
         }
 
         var result = await collection.find(theQuery, queryOptions).toArray();
-        // console.log(result);
 
         if (result.length === 0) {
           console.log(`No results found`);
@@ -156,7 +137,6 @@ async function connectAndDisplay(target, type, res) {
           });
         }
       } finally {
-        // console.log(`Writing Result and Closing DB`);
         res.end(t);
         database.close();
       }

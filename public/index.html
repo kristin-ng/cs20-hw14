@@ -33,9 +33,8 @@
       }
 
       // Shows prompt for user to input a company name or a
-      // compay's ticker. App only allows for one to be shown.
+      // compay's ticker.
       function showField(infoType) {
-        // console.log(infoType);
         $("#user_input").show();
         if (infoType == "company") {
           $("#enter-name").show();
@@ -53,17 +52,17 @@
     <h1>Welcome to the Stock Ticker App</h1>
 
     <form method="POST" action="/result" target="_blank">
-      Please enter which information you will provide: <br />
+      Enter which Info will be Provided: <br />
       <input type="radio" name="input_type" id="input_type" value="company" />
       Company Name <br />
       <input type="radio" name="input_type" id="input_type" value="ticker" />
       Company Ticker <br />
 
       <div id="enter-name">
-        <p>Please enter a company name:</p>
+        <p>Enter a company name:</p>
       </div>
       <div id="enter-ticker">
-        <p>Please enter a company ticker:</p>
+        <p>Enter a company ticker:</p>
       </div>
       <input type="text" name="user_input" id="user_input" /> <br /><br />
 
