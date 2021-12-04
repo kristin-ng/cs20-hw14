@@ -1,0 +1,30 @@
+{
+  "name": "stocktickerapp",
+  "version": "1.0.0",
+  "description": "returns company name or stock ticker based on user's query",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atrinh1996/StockTicker.git"
+  },
+  "keywords": [
+    "stock",
+    "finance",
+    "comp20"
+  ],
+  "author": "Amy B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atrinh1996/StockTicker/issues"
+  },
+  "homepage": "https://github.com/atrinh1996/StockTicker#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
+  }
+}
