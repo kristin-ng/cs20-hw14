@@ -1,10 +1,3 @@
-/*populate.js
- * Uses information from companies.csv file to populate the
- * Mongo database.
- *
- * Kristin Ng
- */
-
 const MongoClient = require("mongodb").MongoClient;
 const csvParser = require("csv-parser");
 const readline = require("readline");

@@ -1,9 +1,3 @@
-/* app.js
- * Purpose: Display's user's requested information.
- *
- * Kristin Ng
- */
-
 var http = require("http");
 var url = require("url");
 var path = require("path");
@@ -54,7 +48,7 @@ const server = http.createServer((req, res) => {
 });
 
 // the port in a variable using environment variable;
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 server.listen(port, () => console.log(`Server running on port ${port}`));
 
 // Returns the string for Content-Type given a files path.
