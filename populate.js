@@ -20,7 +20,7 @@ function main() {
     }
 
     // get database and collection object
-    var dbo = database.db("StockDB");
+    var dbo = database.db("db");
     var collection = dbo.collection("companies");
 
     console.log("Success connecting to DB!! :)");
